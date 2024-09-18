@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       document.querySelector(".navbar").innerHTML = data;
       const curentPage = window.location.pathname.split("/").pop();
-      console.log(curentPage);
       const navLinks = document.querySelectorAll("a");
       navLinks.forEach((link) => {
         if (link.getAttribute("href") == curentPage) {

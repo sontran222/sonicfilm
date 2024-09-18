@@ -9,9 +9,11 @@
 
 body {
   background-color: #151515ff;
-  width: 1524px;
+  width: 95vw;
 }
-
+.container {
+  width: 95vw;
+}
 .all {
   position: relative;
 }

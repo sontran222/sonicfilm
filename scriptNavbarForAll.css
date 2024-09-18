@@ -2,15 +2,12 @@
   width: 100vw;
   position: relative;
   top: 0;
-  height: 800px;
 }
 
-.container video {
-  width: 100%;
+.container iframe {
+  width: 95vw;
   height: 800px;
   object-fit: cover;
-  position: absolute;
-  top: 0;
 }
 .navbar {
   position: sticky;

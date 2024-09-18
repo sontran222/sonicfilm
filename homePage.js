@@ -16,15 +16,19 @@ fetch("https://phimapi.com/v1/api/danh-sach/phim-le")
 
     let image = box.querySelector(".image");
     addImage(data, image);
-    console.log(data);
     allBox.appendChild(box);
   });
 
 function addImage(data, image) {
-  data.data.seoOnPage.og_image.forEach((item) => {
+  console.log(data.data.items);
+  data.data.items.forEach((item, index) => {
     let img = document.createElement("img");
-    img.src = `https://phimimg.com` + item;
+    img.src = `https://phimimg.com/` + item.thumb_url;
+    img.addEventListener("click", function () {
+      localStorage.setItem("slugName", JSON.stringify(item.slug));
+      window.location.href = "xemtruoc.html";
+    });
+
     image.append(img);
-    console.log(img);
   });
 }

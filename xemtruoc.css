@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #151515ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container img {
+  height: 490px;
+  width: 980px;
+  object-fit: cover;
+  padding-top: 40px;
+}
+
+.allBox {
+  width: 980px;
+  background-color: #252525;
+  height: 800px;
+}
+
+.allBlock h2,
+.infoFilm {
+  padding: 20px;
+}
+
+.allBlock {
+  display: flex;
+  justify-content: space-around;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+}
+.block p {
+  padding-bottom: 8px;
+}
+
+.content {
+  padding: 20px 0;
+}
+
+.content h4 {
+  padding-bottom: 10px;
+}
