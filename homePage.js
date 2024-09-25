@@ -1,23 +1,38 @@
 var allBox = document.querySelector(".allBox");
-fetch("https://phimapi.com/v1/api/danh-sach/phim-le")
-  .then((res) => res.json())
-  .then((data) => {
-    var box = document.createElement("div");
-    box.classList.add("box");
-    box.innerHTML = `
-      <div class="title">
-        <h2>${data.data.seoOnPage.titleHead}</h2>
-        <p>Xem tất cả</p>
-      </div>
-      <div class="image">
-      
-      </div>
-    `;
+var filmCategories = [
+  { film: "phim-le", linkNav: "phimle.html" },
+  { film: "phim-bo", linkNav: "phimbo.html" },
+  { film: "hoat-hinh", linkNav: "hoathinh.html" },
+  { film: "tv-shows", linkNav: "TVshow.html" },
+  "phim-bo",
+  "hoat-hinh",
+  "tv-shows",
+];
 
-    let image = box.querySelector(".image");
-    addImage(data, image);
-    allBox.appendChild(box);
-  });
+async function FilmImg(filmCategory, linkSeeAll) {
+  console.log(linkSeeAll);
+  const res = await fetch(
+    `https://phimapi.com/v1/api/danh-sach/${filmCategory}`
+  );
+  const data = await res.json();
+  var box = document.createElement("div");
+  box.classList.add("box");
+  box.innerHTML = `
+  <div class="title">
+    <h2>${data.data.seoOnPage.titleHead}</h2>
+    <a href="${linkSeeAll}">Xem tất cả</a>
+  </div>
+  <div class="image">
+  
+  </div>
+  `;
+
+  let seeAll = box.querySelector(".title h2");
+
+  let image = box.querySelector(".image");
+  addImage(data, image);
+  allBox.appendChild(box);
+}
 
 function addImage(data, image) {
   console.log(data.data.items);
@@ -32,3 +47,19 @@ function addImage(data, image) {
     image.append(img);
   });
 }
+
+async function loadData() {
+  for (let filmCategory of filmCategories) {
+    await FilmImg(filmCategory.film, filmCategory.linkNav);
+  }
+}
+
+function clickToSeeAll(seeAll) {
+  seeAll.addEventListener("click", function () {});
+}
+
+loadData();
+
+
+
+

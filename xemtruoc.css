@@ -11,12 +11,31 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.container {
+  height: 490px;
+  width: 980px;
+  position: relative;
+}
 
+.container div {
+  height: 490px;
+  width: 980px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container div img {
+  width: 80px;
+  height: 80px;
+}
 .container img {
   height: 490px;
   width: 980px;
   object-fit: cover;
-  padding-top: 40px;
+  position: relative;
 }
 
 .allBox {

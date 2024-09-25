@@ -9,11 +9,14 @@
 
 body {
   background-color: #151515ff;
-  width: 95vw;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
-.container {
-  width: 95vw;
-}
+
 .all {
   position: relative;
 }
@@ -25,7 +28,6 @@ body {
 }
 
 .box {
-  padding-left: 45px;
   position: relative;
 }
 .title {

@@ -1,5 +1,6 @@
 var allBox = document.querySelector(".allBox");
 var mainFilmImg = document.querySelector(".container img");
+var container = document.querySelector(".container");
 const slugName = JSON.parse(localStorage.getItem("slugName"));
 
 fetch(`https://phimapi.com/phim/${slugName}`)
@@ -35,4 +36,34 @@ fetch(`https://phimapi.com/phim/${slugName}`)
         </div>
       </div>
     `;
+
+    container.addEventListener("click", function () {
+      IconPlayClick(data.movie.slug);
+    });
   });
+mouseMove(container);
+mouseLeft(container);
+
+function mouseMove(container) {
+  container.addEventListener("mouseover", function () {
+    if (!container.querySelector(".iconPlay")) {
+      BlurIcon = document.createElement("div");
+      BlurIcon.innerHTML = '<img src="iconPlay.png" alt="" class="iconPlay" />';
+      BlurIcon.style.background = "rgba(0, 0, 0, 0.4)";
+      BlurIcon.style.cursor = "pointer";
+      container.append(BlurIcon);
+    }
+  });
+}
+
+function mouseLeft(container) {
+  container.addEventListener("mouseleave", function () {
+    container.querySelector("div").remove();
+    this.style.transition = "5s";
+  });
+}
+
+function IconPlayClick(slug) {
+  localStorage.setItem("slugName", JSON.stringify(slug));
+  window.location.href = "trinhchieu.html";
+}
