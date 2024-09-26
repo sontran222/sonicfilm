@@ -4,13 +4,9 @@ var filmCategories = [
   { film: "phim-bo", linkNav: "phimbo.html" },
   { film: "hoat-hinh", linkNav: "hoathinh.html" },
   { film: "tv-shows", linkNav: "TVshow.html" },
-  "phim-bo",
-  "hoat-hinh",
-  "tv-shows",
 ];
 
 async function FilmImg(filmCategory, linkSeeAll) {
-  console.log(linkSeeAll);
   const res = await fetch(
     `https://phimapi.com/v1/api/danh-sach/${filmCategory}`
   );
@@ -35,12 +31,12 @@ async function FilmImg(filmCategory, linkSeeAll) {
 }
 
 function addImage(data, image) {
-  console.log(data.data.items);
   data.data.items.forEach((item, index) => {
     let img = document.createElement("img");
     img.src = `https://phimimg.com/` + item.thumb_url;
     img.addEventListener("click", function () {
-      localStorage.setItem("slugName", JSON.stringify(item.slug));
+      localStorage.clear();
+      localStorage.setItem("slug", JSON.stringify(item.slug));
       window.location.href = "xemtruoc.html";
     });
 
@@ -59,7 +55,3 @@ function clickToSeeAll(seeAll) {
 }
 
 loadData();
-
-
-
-

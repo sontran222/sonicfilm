@@ -1,8 +1,8 @@
 var allBox = document.querySelector(".allBox");
 var mainFilmImg = document.querySelector(".container img");
 var container = document.querySelector(".container");
-const slugName = JSON.parse(localStorage.getItem("slugName"));
-
+const slugName = JSON.parse(localStorage.getItem("slug"));
+console.log(slugName);
 fetch(`https://phimapi.com/phim/${slugName}`)
   .then((res) => res.json())
   .then((data) => {
@@ -17,17 +17,18 @@ fetch(`https://phimapi.com/phim/${slugName}`)
     <h2>${data.movie.name}</h2>
       <div class="infoFilm">
         <div class="allBlock">
-          <div class="block">
+          <div class="block block1">
             <p>Thể loại: ${category}</p>
             <p>Diễn viên: ${data.movie.actor}</p>
           </div>
-          <div class="block">
+          <div class="block block2">
             <p>Năm phát hành: ${data.movie.year}</p>
             <p>Đạo diễn: ${data.movie.director}</p>
           </div>
-          <div class="block">
+          <div class="block block3">
             <p>Quốc gia: ${data.movie.country[0].name}</p>
             <p>Thời lượng: ${data.movie.time}</p>
+            <p>Số lượng: ${data.movie.episode_total} tập</p>
           </div>
         </div>
         <div class="content">
@@ -36,7 +37,6 @@ fetch(`https://phimapi.com/phim/${slugName}`)
         </div>
       </div>
     `;
-
     container.addEventListener("click", function () {
       IconPlayClick(data.movie.slug);
     });
