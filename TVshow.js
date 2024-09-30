@@ -1,7 +1,7 @@
 let listFilm = document.querySelector(".listFilm");
 let page = 0;
 
-fetch("https://phimapi.com/v1/api/danh-sach/phim-bo?limit=25&page=1")
+fetch("https://phimapi.com/v1/api/danh-sach/tv-shows?limit=25&page=1")
   .then((res) => res.json())
   .then((data) => {
     data.data.items.forEach((item) => {

@@ -33,7 +33,8 @@ async function FilmImg(filmCategory, linkSeeAll) {
 function addImage(data, image) {
   data.data.items.forEach((item, index) => {
     let img = document.createElement("img");
-    img.src = `https://phimimg.com/` + item.thumb_url;
+    let filmImage = item.thumb_url;
+    img.src = `https://phimimg.com/` + filmImage;
     img.addEventListener("click", function () {
       localStorage.clear();
       localStorage.setItem("slug", JSON.stringify(item.slug));

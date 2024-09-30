@@ -3,9 +3,67 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: white;
 }
 
 body {
+  height: 100vh;
+  background: #151515ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listFilm {
   width: 95vw;
-  background-color: #151515ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 270px;
+  height: 140px;
+  position: relative;
+}
+
+.eposideAmount {
+  position: absolute;
+  top: 0;
+  border-radius: 5px;
+  background: rgba(255, 111, 0, 0.7);
+  margin: 5px;
+}
+
+.filmName {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+
+.listFilm img {
+  width: 270px;
+  height: 140px;
+  object-fit: cover;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.listPage {
+  margin-top: 20px;
+}
+
+.listPage span {
+  background: rgb(76, 76, 75);
+  padding: 7px 10px;
+  border-radius: 5px;
+}
+
+.listPage span.choose {
+  border: 1px solid orange;
+  color: orange;
 }

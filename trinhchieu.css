@@ -7,12 +7,86 @@ body {
   height: 100vh;
   width: 100vw;
   background: #151515ff;
-}
-iframe {
-  width: 100%;
-  height: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-div {
-  height: 800px;
+.allBox {
+  width: 980px;
+  background: rgba(34, 34, 34, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+iframe {
+  width: 960px;
+  height: 536px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.changeServer {
+  width: 300px;
+  height: 40px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.changeServer span {
+  background: #f1864c;
+  margin: 5px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.listEpisode {
+  width: 960px;
+  background: rgba(54, 54, 54, 1);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listEpisode p {
+  margin: 5px 7px;
+  padding-bottom: 3px;
+}
+
+.listEpisode span {
+  margin: 7px;
+  background-color: rgb(169, 161, 161);
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 600;
+}
+
+.listEpisode .choseEpisode {
+  background: #ff9601;
+}
+
+.listEpisode span:hover {
+  color: #ff9601;
+  cursor: pointer;
+}
+
+.decription {
+  width: 960px;
+  padding-top: 10px;
+}
+
+.decription p {
+  font-size: 30px;
+  color: #ff9601;
 }
