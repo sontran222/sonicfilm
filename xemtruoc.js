@@ -6,7 +6,6 @@ console.log(slugName);
 fetch(`https://phimapi.com/phim/${slugName}`)
   .then((res) => res.json())
   .then((data) => {
-    console.log(data);
     let categories = data.movie.category;
     let category = [];
     categories.forEach((item) => {

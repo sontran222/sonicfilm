@@ -81,12 +81,12 @@ iframe {
   cursor: pointer;
 }
 
-.decription {
+.filmName {
   width: 960px;
   padding-top: 10px;
 }
 
-.decription p {
+.filmName p {
   font-size: 30px;
   color: #ff9601;
 }

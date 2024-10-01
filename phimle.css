@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  color: white;
 }
 
 body {
@@ -61,6 +60,14 @@ body {
   background: rgb(76, 76, 75);
   padding: 7px 10px;
   border-radius: 5px;
+}
+
+.listPage div {
+  background: rgb(76, 76, 75);
+  padding: 7px 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .listPage span.choose {
